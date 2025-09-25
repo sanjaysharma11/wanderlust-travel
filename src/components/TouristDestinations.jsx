@@ -129,19 +129,19 @@ const TouristDestinations = () => {
                   alt={destination.name}
                   className="w-full h-64 object-cover"
                 />
-                <div className="absolute top-4 left-4 flex space-x-2">
+                <div className="absolute top-2 left-2 sm:top-4 sm:left-4 flex flex-wrap gap-1 sm:gap-2 max-w-[calc(100%-4rem)] sm:max-w-[calc(100%-6rem)]">
                   {destination.highlights.map((highlight, idx) => (
                     <span
                       key={idx}
-                      className="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium"
+                      className="bg-white/90 text-gray-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium shadow-sm"
                     >
                       {highlight}
                     </span>
                   ))}
                 </div>
-                <div className="absolute top-4 right-4 bg-white/90 text-gray-800 px-3 py-1 rounded-full flex items-center space-x-1">
-                  <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                  <span className="text-sm font-medium">{destination.rating}</span>
+                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white/90 text-gray-800 px-2 sm:px-3 py-1 rounded-full flex items-center space-x-1 shadow-sm">
+                  <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-500 fill-current" />
+                  <span className="text-xs sm:text-sm font-medium">{destination.rating}</span>
                 </div>
               </div>
               
@@ -189,77 +189,77 @@ const TouristDestinations = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 rounded-3xl"></div>
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMjIiIGN5PSIyMiIgcj0iMiIvPjxjaXJjbGUgY3g9IjQyIiBjeT0iNDIiIHI9IjIiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
           
-          <div className="relative max-w-6xl mx-auto p-12">
+          <div className="relative max-w-6xl mx-auto p-4 sm:p-8 md:p-12">
             {/* Hero Section */}
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-emerald-400 to-cyan-500 rounded-full mb-6 shadow-2xl">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="text-center mb-8 sm:mb-12">
+              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-400 to-cyan-500 rounded-full mb-4 sm:mb-6 shadow-2xl">
+                <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path>
                 </svg>
               </div>
               
-              <h3 className="text-4xl font-bold text-white mb-4">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4 px-2">
                 Discover India's Hidden Treasures
               </h3>
               
-              <p className="text-gray-300 text-xl max-w-2xl mx-auto leading-relaxed">
+              <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed px-4">
                 From snow-capped mountains to golden beaches, explore every corner of incredible India
               </p>
             </div>
 
             {/* States Showcase */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-12">
               {/* North India */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center">
-                    <span className="text-white text-xl">�️</span>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                <div className="flex items-center space-x-2 sm:space-x-3 mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-lg sm:text-xl">🏔️</span>
                   </div>
-                  <div>
-                    <h4 className="text-white font-bold text-lg">North India</h4>
-                    <p className="text-gray-400 text-sm">Mountains & Heritage</p>
+                  <div className="min-w-0">
+                    <h4 className="text-white font-bold text-base sm:text-lg truncate">North India</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm">Mountains & Heritage</p>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-white/20 text-white text-xs rounded-full">Himachal Pradesh</span>
-                  <span className="px-3 py-1 bg-white/20 text-white text-xs rounded-full">Uttarakhand</span>
-                  <span className="px-3 py-1 bg-white/20 text-white text-xs rounded-full">Rajasthan</span>
+                <div className="flex flex-wrap gap-1 sm:gap-2">
+                  <span className="px-2 sm:px-3 py-1 bg-white/20 text-white text-xs rounded-full">Himachal Pradesh</span>
+                  <span className="px-2 sm:px-3 py-1 bg-white/20 text-white text-xs rounded-full">Uttarakhand</span>
+                  <span className="px-2 sm:px-3 py-1 bg-white/20 text-white text-xs rounded-full">Rajasthan</span>
                 </div>
               </div>
 
               {/* South India */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-400 to-green-500 rounded-xl flex items-center justify-center">
-                    <span className="text-white text-xl">🌴</span>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                <div className="flex items-center space-x-2 sm:space-x-3 mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-emerald-400 to-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-lg sm:text-xl">🌴</span>
                   </div>
-                  <div>
-                    <h4 className="text-white font-bold text-lg">South India</h4>
-                    <p className="text-gray-400 text-sm">Temples & Backwaters</p>
+                  <div className="min-w-0">
+                    <h4 className="text-white font-bold text-base sm:text-lg truncate">South India</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm">Temples & Backwaters</p>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-white/20 text-white text-xs rounded-full">Kerala</span>
-                  <span className="px-3 py-1 bg-white/20 text-white text-xs rounded-full">Tamil Nadu</span>
-                  <span className="px-3 py-1 bg-white/20 text-white text-xs rounded-full">Karnataka</span>
+                <div className="flex flex-wrap gap-1 sm:gap-2">
+                  <span className="px-2 sm:px-3 py-1 bg-white/20 text-white text-xs rounded-full">Kerala</span>
+                  <span className="px-2 sm:px-3 py-1 bg-white/20 text-white text-xs rounded-full">Tamil Nadu</span>
+                  <span className="px-2 sm:px-3 py-1 bg-white/20 text-white text-xs rounded-full">Karnataka</span>
                 </div>
               </div>
 
               {/* East & West India */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center">
-                    <span className="text-white text-xl">�️</span>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                <div className="flex items-center space-x-2 sm:space-x-3 mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-400 to-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <span className="text-white text-lg sm:text-xl">🏖️</span>
                   </div>
-                  <div>
-                    <h4 className="text-white font-bold text-lg">East & West</h4>
-                    <p className="text-gray-400 text-sm">Beaches & Culture</p>
+                  <div className="min-w-0">
+                    <h4 className="text-white font-bold text-base sm:text-lg truncate">East & West</h4>
+                    <p className="text-gray-400 text-xs sm:text-sm">Beaches & Culture</p>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-white/20 text-white text-xs rounded-full">Goa</span>
-                  <span className="px-3 py-1 bg-white/20 text-white text-xs rounded-full">West Bengal</span>
-                  <span className="px-3 py-1 bg-white/20 text-white text-xs rounded-full">Maharashtra</span>
+                <div className="flex flex-wrap gap-1 sm:gap-2">
+                  <span className="px-2 sm:px-3 py-1 bg-white/20 text-white text-xs rounded-full">Goa</span>
+                  <span className="px-2 sm:px-3 py-1 bg-white/20 text-white text-xs rounded-full">West Bengal</span>
+                  <span className="px-2 sm:px-3 py-1 bg-white/20 text-white text-xs rounded-full">Maharashtra</span>
                 </div>
               </div>
             </div>
@@ -291,16 +291,16 @@ const TouristDestinations = () => {
                 </button>
               </div>
 
-              <div className="flex justify-center items-center space-x-8 text-sm text-gray-400">
-                <div className="flex items-center space-x-2">
+              <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm text-gray-400">
+                <div className="flex items-center space-x-1 sm:space-x-2">
                   <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
                   <span>24/7 Support</span>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-1 sm:space-x-2">
                   <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
                   <span>28+ States</span>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-1 sm:space-x-2">
                   <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
                   <span>Custom Plans</span>
                 </div>
