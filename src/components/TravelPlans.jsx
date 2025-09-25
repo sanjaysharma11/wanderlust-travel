@@ -8,20 +8,40 @@ const TravelPlans = () => {
   const [destinationDetails, setDestinationDetails] = useState(null);
 
   useEffect(() => {
-    const destinationData = localStorage.getItem('selectedDestination');
-    
-    if (destinationData) {
-      try {
-        const parsedData = JSON.parse(destinationData);
-        setDestinationDetails(parsedData);
-        setSelectedDestination(parsedData.name);
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.error('Error parsing destination data:', error);
-        // Fallback to treat as string if parsing fails
-        setSelectedDestination(destinationData);
+    const updateDestinationData = () => {
+      const destinationData = localStorage.getItem('selectedDestination');
+      
+      if (destinationData) {
+        try {
+          const parsedData = JSON.parse(destinationData);
+          setDestinationDetails(parsedData);
+          setSelectedDestination(parsedData.name);
+        } catch (error) {
+          // eslint-disable-next-line no-console
+          console.error('Error parsing destination data:', error);
+          // Fallback to treat as string if parsing fails
+          setSelectedDestination(destinationData);
+        }
+      } else {
+        // Clear data if no destination is selected
+        setDestinationDetails(null);
+        setSelectedDestination('');
       }
-    }
+    };
+
+    // Initial load
+    updateDestinationData();
+
+    // Listen for storage changes (when localStorage is updated)
+    window.addEventListener('storage', updateDestinationData);
+    
+    // Custom event listener for same-page localStorage updates
+    window.addEventListener('destinationSelected', updateDestinationData);
+
+    return () => {
+      window.removeEventListener('storage', updateDestinationData);
+      window.removeEventListener('destinationSelected', updateDestinationData);
+    };
   }, []);
 
   const travelTiers = [
@@ -75,7 +95,7 @@ const TravelPlans = () => {
 
   const handleWhatsAppContact = () => {
     const message = `Hi! I need help choosing the right travel plan${selectedDestination ? ` for ${selectedDestination}` : ''}. Could you please assist me?`;
-    const phoneNumber = '1234567890';
+    const phoneNumber = '+919596274300';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, '_blank');
@@ -102,17 +122,17 @@ const TravelPlans = () => {
               let message = `Hi! I'm interested in the ${tier.name} travel plan`;
               
               if (destinationDetails) {
-                message += `\n\n📍 *Selected Destination:* ${destinationDetails.name}\n`;
-                message += `📍 *Location:* ${destinationDetails.location}\n`;
-                message += `⭐ *Rating:* ${destinationDetails.rating}/5\n`;
-                message += `⏰ *Duration:* ${destinationDetails.duration}\n`;
+                message += `\n\n*Selected Destination:* ${destinationDetails.name}\n`;
+                message += `*Location:* ${destinationDetails.location}\n`;
+                message += `*Rating:* ${destinationDetails.rating}/5\n`;
+                message += `*Duration:* ${destinationDetails.duration}\n`;
                 
                 if (destinationDetails.highlights && destinationDetails.highlights.length > 0) {
-                  message += `✨ *Highlights:* ${destinationDetails.highlights.join(', ')}\n`;
+                  message += `*Highlights:* ${destinationDetails.highlights.join(', ')}\n`;
                 }
                 
                 if (destinationDetails.description) {
-                  message += `📝 *About:* ${destinationDetails.description}`;
+                  message += `*About:* ${destinationDetails.description}`;
                 }
               } else if (selectedDestination) {
                 message += ` for ${selectedDestination}`;
@@ -120,7 +140,7 @@ const TravelPlans = () => {
               
               message += `\n\nCould you please provide more details about pricing and availability?`;
               
-              const phoneNumber = '1234567890';
+              const phoneNumber = '+919596274300';
               const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
               
               window.open(whatsappUrl, '_blank');

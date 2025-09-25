@@ -65,8 +65,11 @@ const TouristDestinations = () => {
     // Store selected destination in localStorage
     localStorage.setItem('selectedDestination', JSON.stringify(destination))
     
+    // Trigger custom event to notify other components
+    window.dispatchEvent(new Event('destinationSelected'));
+    
     // Show success toast with emoji
-    toast.success(`🎯 ${destination.name} selected! Now choose your travel plan below.`, {
+    toast.success(`🚌 ${destination.name} selected! Now choose your travel plan below.`, {
       position: "top-right",
       autoClose: 4000,
       hideProgressBar: false,
@@ -274,7 +277,7 @@ const TouristDestinations = () => {
                 <button
                   onClick={() => {
                     const message = `Hi! I'm interested in exploring destinations beyond the featured ones on your website.\n\nI'd like to know about:\n• Travel packages for different Indian states\n• Popular and offbeat destinations\n• Customized itineraries\n• Pricing and availability\n\nCould you please help me plan my trip?`;
-                    const phoneNumber = '1234567890';
+                    const phoneNumber = '+919596274300';
                     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
                     window.open(whatsappUrl, '_blank');
                     toast.success('🌍 Connecting you with our destination experts!');

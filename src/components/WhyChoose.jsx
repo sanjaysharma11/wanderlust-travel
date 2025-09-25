@@ -33,28 +33,6 @@ const WhyChoose = () => {
   return (
     <section id="features" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* New Hero Text Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-20"
-        >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-            Discover Extraordinary{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Travel Experiences
-            </span>
-          </h1>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-700 mb-8">
-            Your Journey Starts Here
-          </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            We craft bespoke travel experiences that go beyond ordinary vacations. From luxury escapes to adventurous expeditions, we tailor every detail to your dreams.
-          </p>
-        </motion.div>
-
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
