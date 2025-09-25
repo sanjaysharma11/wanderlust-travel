@@ -1,0 +1,20 @@
+# Ignore build output
+bin/
+obj/
+
+# User-specific files
+.vs/
+*.swp
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Config files for local dev only
+appsettings.Development.json
+appsettings.Local.json
+
+# Git
+.git
+.gitignore
