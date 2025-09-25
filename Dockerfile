@@ -10,7 +10,7 @@ COPY package*.json ./
 # Install dependencies (prefer offline cache for speed)
 RUN npm ci --prefer-offline --no-audit --progress=false
 
-# Copy source code
+# Copy all source code
 COPY . .
 
 # Build React (Vite) app
