@@ -39,14 +39,6 @@ This project showcases travel destinations, travel plans, user testimonials, and
 - Axios for API calls
 - React Testing Library & Vitest for frontend testing
 
-**Backend:**
-- Node.js, Express.js
-- MongoDB with Mongoose
-- JWT authentication
-- Nodemailer for email handling
-- Bcrypt for password hashing
-- Swagger for API documentation
-
 **DevOps & Deployment:**
 - Git for version control
 - GitHub Actions for CI/CD
