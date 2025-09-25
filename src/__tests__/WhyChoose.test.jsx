@@ -15,7 +15,7 @@ describe('WhyChoose Component', () => {
 
   it('displays promotional text', () => {
     render(<WhyChoose />)
-    expect(screen.getByText(/Discover Extraordinary/i)).toBeInTheDocument()
+    expect(screen.getByText(/committed to making your travel dreams/i)).toBeInTheDocument()
   })
 
   it('shows descriptive content', () => {

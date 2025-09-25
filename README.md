@@ -53,7 +53,7 @@ This project showcases travel destinations, travel plans, user testimonials, and
 - Docker for containerization
 - Heroku / AWS for deployment (optional)
 - ESLint & Prettier for code quality
-- PM2 for process management in production
+- PM2 for process management in production..
 
 ---
 
